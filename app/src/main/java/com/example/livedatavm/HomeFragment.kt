@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.livedatavm.adapter.HomeAdapter
 import com.example.livedatavm.databinding.FragmentHomeBinding
 import com.example.livedatavm.model.DataProduct
@@ -30,9 +31,11 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        showRecycler()
         viewModelProduct.getprodctList()
         viewModelProduct.productList.observe(requireActivity()){
             homeAdapter.setProductData(it as ArrayList<DataProduct>)
+
         }
 
     }
@@ -47,7 +50,7 @@ class HomeFragment : Fragment() {
         })
         binding.rvProduct.apply {
             adapter = homeAdapter
-            layoutManager = GridLayoutManager(requireActivity(),2)
+            layoutManager = LinearLayoutManager(requireActivity())
         }
 
     }

@@ -19,11 +19,11 @@
         android:name="com.example.livedatavm.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
-        <argument
-            android:name="product"
-            app:argType="com.example.livedatavm.model.DataProduct" />
         <action
             android:id="@+id/action_detailFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <argument
+            android:name="detailProductAr"
+            app:argType="com.example.livedatavm.model.DataProduct" />
     </fragment>
 </navigation>

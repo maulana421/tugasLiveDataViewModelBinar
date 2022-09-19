@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.livedatavm.databinding.ItemBinding
 import com.example.livedatavm.model.DataProduct
 
-class HomeAdapter(var listProduct : ArrayList<DataProduct>,val list : CLicked): RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
+class HomeAdapter(var listProduct : MutableList<DataProduct>,val list : CLicked): RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
     inner class HomeViewHolder(val binding : ItemBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(item : DataProduct){
             binding.apply {
